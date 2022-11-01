@@ -1,0 +1,29 @@
+<div class="login-feild">
+    <h1><span>NOKIA</span></h1>
+    <h1>FESILIVISS</h1>
+    <form action="">
+    <div class="example-container">
+        <mat-form-field >
+          <mat-label>Enter your email</mat-label>
+          <input matInput placeholder="pat@example.com" [formControl]="email" required >
+          <mat-error *ngIf="email.invalid">{{getErrorMessage()}}</mat-error>
+        </mat-form-field>
+      </div>
+    <div class="example-container">
+        <mat-form-field >
+          <mat-label>Enter password</mat-label>
+          <input matInput [type]="hide ? 'password' : 'text'" [formControl]="password" required >
+          <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+            <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+          </button>
+          <mat-error *ngIf="password.invalid">{{getPasswordErrorMessage()}}</mat-error>
+        </mat-form-field>
+    </div>
+    <div class="row">
+        <h4>Forgot password?</h4>
+    </div>
+    <div class="example-button-row">
+        <button mat-button color="primary" class="btn">Submit</button>
+    </div>
+  </form>
+</div>
